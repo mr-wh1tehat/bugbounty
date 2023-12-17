@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "${PORT}:80"
+      - "${PORT}:8080"
     volumes:
       - .:/var/www/html
     depends_on:
@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: Dockerfile-SSTI
     ports:
-      - "${PORT}:80"
+      - "${PORT}:8080"
     volumes:
       - ./ssti-labs:/var/www/html
     depends_on:
