@@ -1,10 +1,11 @@
 FROM php:7.4-apache
 
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-
-RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev && \
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev git && \
     docker-php-ext-configure gd --with-jpeg=/usr/include/ && \
     docker-php-ext-install gd
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
 
 RUN a2enmod rewrite headers
 
