@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "${PORT}:80"
     volumes:
       - .:/var/www/html
     depends_on:
@@ -23,14 +23,14 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - "${PORT}:3306"
 
   ssti-web:
     build:
       context: .
       dockerfile: Dockerfile-SSTI
     ports:
-      - "81:80"
+      - "${PORT}:80"
     volumes:
       - ./ssti-labs:/var/www/html
     depends_on:
