@@ -1,5 +1,6 @@
 version: '2.4'
 
+name: bugbountylab
 services:
   web:
     build:
